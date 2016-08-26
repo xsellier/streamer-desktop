@@ -1,0 +1,54 @@
+{
+  "name": "twitch-desktop",
+  "version": "1.0.0",
+  "description": "Streamer army knife",
+  "main": "build/index.html",
+  "scripts": {
+    "start": "export NODE_ENV=develop ; webpack-dev-server --config webpack.config.js --progress --inline --colors",
+    "build": "export NODE_ENV=production ; webpack --config webpack.config.js --progress --inline --colors"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xsellier/twitch-desktop.git"
+  },
+  "author": "Xavier Sellier",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/xsellier/twitch-desktop/issues"
+  },
+  "homepage": "https://github.com/xsellier/twitch-desktop#readme",
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "classnames": "^2.1.2",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "react-redux": "^4.2.1",
+    "redux": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.21",
+    "babel-eslint": "^4.0.5",
+    "babel-loader": "^5.3.2",
+    "babel-runtime": "^5.8.25",
+    "css-loader": "^0.23.0",
+    "eslint": "^1.1.0",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.2.2",
+    "html-webpack-plugin": "^1.6.1",
+    "react-hot-loader": "^1.2.8",
+    "redux-devtools": "^3.0.0-beta-3",
+    "redux-devtools-diff-monitor": "^3.0.0",
+    "redux-devtools-dock-monitor": "^1.0.0-beta-3",
+    "redux-devtools-log-monitor": "^1.0.0-beta-3",
+    "redux-logger": "^2.0.4",
+    "source-map-loader": "^0.1.5",
+    "transfer-webpack-plugin": "^0.1.4",
+    "webpack": "^1.11.0",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "keywords": [
+    "stream",
+    "hitbox",
+    "twitch"
+  ]
+}
