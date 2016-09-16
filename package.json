@@ -1,29 +1,48 @@
 {
-  "name": "twitch-desktop",
+  "name": "streamer-desktop",
   "version": "1.0.0",
   "description": "Streamer army knife",
   "main": "build/index.html",
+  "window": {
+    "title": "Streamer Desktop",
+    "icon": "build/img/icon-binomatic.png",
+    "width": 1024,
+    "height": 768,
+    "position": "center",
+    "min_width": 768,
+    "min_height": 600
+  },
+  "webkit": {
+    "plugin": true,
+    "page-cache": false
+  },
   "scripts": {
-    "start": "export NODE_ENV=develop ; webpack-dev-server --config webpack.config.js --progress --inline --colors",
-    "build": "export NODE_ENV=production ; webpack --config webpack.config.js --progress --inline --colors"
+    "start": "export NODE_ENV=develop ; webpack-dev-server --config webpack.config.js --progress --inline --colors --target node-webkit",
+    "dev": "export NODE_ENV=develop ; webpack --config webpack.config.js --progress --inline --colors --target node-webkit",
+    "build": "export NODE_ENV=production ; webpack --config webpack.config.js --progress --inline --colors --target node-webkit"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xsellier/twitch-desktop.git"
+    "url": "git+https://github.com/xsellier/streamer-desktop.git"
   },
   "author": "Xavier Sellier",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/xsellier/twitch-desktop/issues"
+    "url": "https://github.com/xsellier/streamer-desktop/issues"
   },
-  "homepage": "https://github.com/xsellier/twitch-desktop#readme",
+  "homepage": "https://github.com/xsellier/streamer-desktop#readme",
   "dependencies": {
     "babel-polyfill": "^6.3.14",
     "classnames": "^2.1.2",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
     "react-redux": "^4.2.1",
-    "redux": "^3.2.1"
+    "redux": "^3.2.1",
+    "redux-devtools": "^3.3.1",
+    "redux-devtools-diff-monitor": "^3.0.0",
+    "redux-devtools-dock-monitor": "^1.1.1",
+    "redux-devtools-log-monitor": "^1.0.11",
+    "twitch-api": "^0.4.5"
   },
   "devDependencies": {
     "babel-core": "^5.8.21",
@@ -35,6 +54,7 @@
     "eslint-loader": "^1.0.0",
     "eslint-plugin-react": "^3.2.2",
     "html-webpack-plugin": "^1.6.1",
+    "json-loader": "^0.5.4",
     "react-hot-loader": "^1.2.8",
     "redux-devtools": "^3.0.0-beta-3",
     "redux-devtools-diff-monitor": "^3.0.0",
@@ -44,7 +64,8 @@
     "source-map-loader": "^0.1.5",
     "transfer-webpack-plugin": "^0.1.4",
     "webpack": "^1.11.0",
-    "webpack-dev-server": "^1.10.1"
+    "webpack-dev-server": "^1.10.1",
+    "webpack-hot-middleware": "^2.12.2"
   },
   "keywords": [
     "stream",

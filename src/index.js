@@ -6,16 +6,30 @@ import { Provider } from 'react-redux'
 import Menu from './menu/Menu'
 import Content from './content/Content'
 
-import configureStore from './store/configureStore'
-import 'todomvc-app-css/index.css'
+import DevTools from './DevTools/DevTools'
 
-const store = configureStore()
+import configureStore from './store/configureStore'
+import configureStoreDev from './store/configureStoreDev'
+
+import api from './api/twitch'
+
+let store
+let devTools = '';
+
+if (__ENV__ === 'develop') {
+  store = configureStoreDev()
+
+  devTools = (<DevTools />);
+} else {
+  store = configureStore()
+}
 
 render(
   <Provider store={store}>
-  	<div>
-	    <Menu />
-	    <Content />
+    <div>
+      <Menu />
+      <Content />
+      { devTools }
     </div>
   </Provider>,
   document.getElementById('root')
